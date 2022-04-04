@@ -1,0 +1,56 @@
+There are 13 unique words in the file:
+Tree Node 0x5611c81b6fc0:
+  Number of Keys: 2
+  Keys: concordance Freq: 1 of Freq: 2
+  Ptrs: 0x5611c81b6c40 0x5611c81b6ee0 0x5611c81b7260
+
+Tree Node 0x5611c81b6c40:
+  Number of Keys: 1
+  Keys: alphabetical Freq: 1
+  Ptrs: 0x5611c81b6a80 0x5611c81b6e00
+
+
+Tree Node 0x5611c81b6a80:
+  Number of Keys: 1
+  Keys: a Freq: 2
+  Ptrs: (nil) (nil)
+
+
+Tree Node 0x5611c81b6e00:
+  Number of Keys: 1
+  Keys: an Freq: 1
+  Ptrs: (nil) (nil)
+
+Tree Node 0x5611c81b6ee0:
+  Number of Keys: 1
+  Keys: is Freq: 1
+  Ptrs: 0x5611c81b6b60 0x5611c81b70a0
+
+
+Tree Node 0x5611c81b6b60:
+  Number of Keys: 2
+  Keys: file Freq: 2 in Freq: 1
+  Ptrs: (nil) (nil) (nil)
+
+
+Tree Node 0x5611c81b70a0:
+  Number of Keys: 1
+  Keys: list Freq: 1
+  Ptrs: (nil) (nil)
+
+Tree Node 0x5611c81b7260:
+  Number of Keys: 1
+  Keys: the Freq: 2
+  Ptrs: 0x5611c81b6d20 0x5611c81b7180
+
+
+Tree Node 0x5611c81b6d20:
+  Number of Keys: 1
+  Keys: text Freq: 2
+  Ptrs: (nil) (nil)
+
+
+Tree Node 0x5611c81b7180:
+  Number of Keys: 2
+  Keys: unique Freq: 1 words Freq: 1
+  Ptrs: (nil) (nil) (nil)

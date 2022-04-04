@@ -1,0 +1,9 @@
+There are 8 distinct words in the text file:
+alphabetical 1
+concordance 1
+file 2
+is 1
+list 1
+text 2
+unique 1
+words 1

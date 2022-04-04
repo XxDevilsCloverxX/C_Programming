@@ -1,0 +1,14 @@
+There are 13 unique words in the file:
+a 2
+alphabetical 1
+an 1
+concordance 1
+file 2
+in 1
+is 1
+list 1
+of 2
+text 2
+the 2
+unique 1
+words 1

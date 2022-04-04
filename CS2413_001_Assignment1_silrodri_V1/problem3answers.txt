@@ -1,0 +1,11 @@
+a. For sorting numbers, arrays would be the best data structure because they can be looped through and compared in consecutive positions
+and data is not being deleted or created.
+
+b. For scheduling jobs to a CPU, a queue would be the best data structure because it's a first in first out process that allows the first processes
+inserted to be executed first.
+
+c. Stack because the index is eventually returned to zero after the recursive function completes, but the data is still accessible.
+
+d. Tree because it allows hierarchical order. (Folders can have sub folders)
+
+e. Graphs because all users that are connected can see and interact with each other.
