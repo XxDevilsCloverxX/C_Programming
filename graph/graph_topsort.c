@@ -309,7 +309,7 @@ void topo_search(node* adj_list[], node* start, unsigned int size){
   node* queue[size], *temp, *otemp, *origin[size];
   data_t table[size][4]; //we only have 4 cols to display after queues are built
   edge* cur;  //to queue neighbors from edges
-  int front=0, rear=0, ofront=0,i, max_path=0;
+  int front=0, rear=0, ofront=0,i, j,max_path=0;
   unsigned int index;  //init crit path as 1 for first node
   //queue nodes with indeg of 0
   //table[i][0,1,..n] is ith row of node, and 0,1,...n is the data in term of vertex, origin, Max_Path, and crit_path
@@ -334,10 +334,13 @@ void topo_search(node* adj_list[], node* start, unsigned int size){
     if(ofront<front){
       //get the point in adj list where parent edge may occur.
       index = find_base(adj_list, origin[rear-1]->vertex,size);
-      if((adj_list[index]->head)->to == temp->vertex){
-      max_path+=(adj_list[index]->head)->weight;
+      cur = adj_list[index]->head;
+      while(cur->to != temp->vertex){
+        cur = cur->next;
       }
+      max_path = cur->weight;
       table[front-1][2].max_path=max_path;  //add max_path data
+      cur = temp->head; //reset cur
     }
     //For every neighbor of node temp, find index of "to" in adj list, then at that point, decrement indeg
     while(cur!=NULL){
@@ -361,12 +364,22 @@ void topo_search(node* adj_list[], node* start, unsigned int size){
     }
   }
   //queue and origin are built, find crit path from rear of origins
-    //The critical path is one that traces from the rear of the origin to the first node
+    //The max and critical paths are ones that trace from the rear of the origin to the first node
   rear--; //rear was 1 too big, cant use for indexing without making it smaller
   while(rear>=begin){
     table[rear][3].crit = 1;  // This is part of the critical path
     rear = find_base(queue, origin[rear]->vertex, size);
     table[rear][3].crit = 1;  // This is part of the critical path too
+  }
+
+  //rear went down to beginning
+  rear = begin - rear;
+  while(rear<front){
+    printf("%d rear ", rear);
+    index = find_base(queue, origin[rear]->vertex, size);
+    printf("found %d\n", index);
+    table[rear][2].max_path += table[index][2].max_path;  // This accumulates max path
+    rear++;
   }
   print_table(table, size); //print the table after
 }
