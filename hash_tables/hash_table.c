@@ -8,13 +8,6 @@
 #define FILE_COUNT 12 //n files to check
 #define SEARCH_QUERY "query.txt"
 
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using hash tables
-FOR: CS 2413 Data Structures Section 001
-*/
-
 //document id linked list
 typedef struct docs{
   unsigned long int id; //id contained in node

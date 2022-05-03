@@ -1,11 +1,4 @@
 #include <stdio.h>
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice Concepts of C programming, complexity analysis, and abstract data types.
-FOR: CS 2413 Data Structures Section 001
-*/
-
 
 void fun1(double *smp, double *lgp); //smp is smaller pointer and lgp is larger pointer
 

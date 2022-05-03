@@ -3,13 +3,6 @@
 #include <string.h> //For strncmp and tolower
 #include <ctype.h>  //For isupper
 
-/*
-AUTHORS: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using Binary Search Trees
-FOR: CS 2413 Data Structures Section 001
-*/
-
 #define SIZE 50 //Max String length is size 50, including NULL
 
 typedef struct node{

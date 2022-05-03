@@ -1,10 +1,4 @@
 #include <stdio.h>
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem2.c
-SPECIFICATION: Practice Concepts of C programming, complexity analysis, and abstract data types.
-FOR: CS 2413 Data Structures Section 001
-*/
 
 /* NAME: main
 PARAMETERS: void, no parameter
