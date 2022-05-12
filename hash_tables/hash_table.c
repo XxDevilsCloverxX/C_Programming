@@ -341,7 +341,7 @@ void input_query(char *query, data *hash_table[]){
       else{
         key = linear_probe_hash(token, j);  //generate a new key
         j++;
-        while(key!=begin){
+        while(key!=begin&&hash_table[key]!=NULL){
           //only perform a check if the value exists
           if(hash_table[key]!= NULL){
             if (strncmp(token, hash_table[key]->str, STR_SIZE) == 0){
