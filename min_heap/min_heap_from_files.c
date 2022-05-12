@@ -14,13 +14,6 @@ typedef struct data{
 void heap_insert(data_t heap[], data_t data, int n);
 data_t heap_pop(data_t heap[], int n);
 
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using heaps
-FOR: CS 2413 Data Structures Section 001
-*/
-
 /* NAME: main
 PARAMETERS: void, none
 PURPOSE: The main function will operate files, start the heap, then call functions to operate on heap.

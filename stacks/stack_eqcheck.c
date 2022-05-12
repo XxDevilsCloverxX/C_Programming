@@ -2,13 +2,6 @@
 #include <stdlib.h> //for malloc
 #include <ctype.h> //for isalpha
 
-/*
-AUTHORS: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using C stacks.
-FOR: CS 2413 Data Structures Section 001
-*/
-
 //size macro for buffer
 #define SIZE 50
 

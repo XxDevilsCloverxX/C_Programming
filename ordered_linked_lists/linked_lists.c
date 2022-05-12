@@ -1,12 +1,6 @@
 #include <stdio.h> //for inputs and outputs
 #include <stdlib.h> //for malloc and exit
 #include <string.h> //for strncmp, strncpy, strndup
-/*
-AUTHORS: Silas Rodriguez and Vedant Supnekar
-FILENAME: CS2413_001_Assignment3_V1.c
-SPECIFICATION: Practice using C structs and linked lists.
-FOR: CS 2413 Data Structures Section 001
-*/
 
 #define SIZE 100
 
@@ -258,104 +252,6 @@ void del_node(node_t **head, char *data){
 
 **********************Report***********************
 
-**disclaimer, all test cases tested in full implementation of the program.
-
-i.
-      Silas Rodriguez:
-
-      void del_node(node_t **head, char *stopbuf);-
-        researched/modified/implemented/tested
-        tested for test cases "a of in an the"
-        research consisted of examining provided linked lists examples from lecture.
-
-      int LL_len(node_t *head);-
-        designed/tested
-        designed from scratch using display_LL as a guide
-        tested with all writings of linked lists, including example from assignment pdf.
-
-      int is_dups(node_t *head, char *data);-
-        designed/modified/tested/implemented
-        Designed from scratch using display_LL as base. modified to find a dupe and change data instead of print.
-        tested with "team work makes the dream work". where all words frequency 1 except work, where work would be 2nd in LL.
-        implemented after succes
-
-      void main(void);-
-        implemented file handling and fscanf functions to pass into functions.
-        Modified to correct order.
-
-      node_t *create_node(char *data);-
-      void insert(node_t **head, char *data);
-      void display_LL(node_t *head, FILE *fp);
-        modified from sample code given in lecture. hard to test until display function was written
-        tested with every case run.
-
-      void bubble_sort(node_t *head);-
-        researched/Modified
-          Researched involved a failed design at 5am where I gave up and looked for a video online
-          following the research process, I modified the code to be compatible with string sorting.
-
-      Assisted with the writing of the report and documentation of the code.
-
-    Research Links:
-      bubble sort: https://www.youtube.com/watch?v=EjWiBcpHx4o&t=1s
-      strncmp: https://www.tutorialspoint.com/c_standard_library/c_function_strncmp.htm
-      strndup: https://www.tutorialspoint.com/strdup-and-strdndup-in-c-cplusplus
-      strncpy: https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm
-
-
-ii.
-  Vedant Supnekar:
-
-    void main(void)
-      searched for another method to scan the words from the file, by using strtok.
-      Method given below
-
-      char str[SIZE];
-      char *word;
-      fgets(str, 200, infile);
-      word = strtok (str," ");
-      while (word != NULL){
-          insert_node(&head, word);
-          word = strtok(NULL, " ");
-    }
-
-
-    void insert(node_t **head, char *data)
-    void display_LL(node_t *head, FILE *fp)
-    node_t *create_node(char *data);
-
-      Created the insert, display and create function with the help of class notes modifying the same for string parameters instead of integer parameters
-
-
-
-    Also created a loop function which would calculate the length of the linked list which later ended up being scrapped due to us finding a better method
-
-      int length_LL(node_t *head){
-      int size = 0;
-
-      while (head != NULL){
-        ++size;
-        head = head->next;
-      }
-
-      return size;
-      }
-
-      The length function was originally going to be used for a bubble sort function which ended up being scrapped since we found a better way to implement the bubble sort function
-
-
-    int is_dups(node_t *head, char *data)
-    Created/implemented
-      Research involved finding solutions over Stack Overflow
-
-
-    Research Links
-    Use of strtok: https://stackoverflow.com/questions/9629473/c-extracting-words-from-string
-    Length of Linked List: https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
-    Bubble Sort: https://www.geeksforgeeks.org/bubble-sort-for-linked-list-by-swapping-nodes/
-    Duplicates in Linked List: https://stackoverflow.com/questions/50470626/how-to-find-duplicates-in-a-linked-list
-
-
 ii.
     1. text.txt and stopwords.txt – passed :)
     2. text.txt with one word and empty stopwords.txt – passed :)
@@ -364,11 +260,10 @@ ii.
     5. text.txt with > 500 total words and stopwords.txt with > 10 total words – passed :) (Scary test, used 2 pasted scholarship essays for it lol)
 
 iii.
-    1. The worst case for inserting n words into the ordered linked list, is if none of the words are duplicates for this program since the program saves runtime
-      and space by handling duplicates before node creation.
-    2.  Big O time complexity for creating an ordered linked list of n words is n^2 in this program. Its an amateur creation, but the slowest step in this process
-      has a nested for loop that orders the linked list alphabetically.
+    1. The worst case for inserting n words into the ordered linked list is if the words are in alphabetical order
+
+    2.  Big O time complexity for creating an ordered linked list of n words is n^2 in this program. The slowest step is insertion of alphabetical words
+
     3. Big O storage requirements for the linked list of size n is n where n is the number of words to be stored into linked lists.
-        However, because character arrays are used to store the words into a struct, the space complexity could be a multiple of n.
 
 */

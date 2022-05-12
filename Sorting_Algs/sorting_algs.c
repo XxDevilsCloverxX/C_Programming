@@ -16,13 +16,6 @@ int index_of_min (void *arr, int low, int high, int (*compare) (void *,int,int))
 void reveal_array(void* arr, int size); //prints the array
 int partition(void* arr, int beg, int end, void (*swap) (void *,int,int), int (*compare) (void *,int,int)); //for quick sort
 
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using searching and sorting algorithms
-FOR: CS 2413 Data Structures Section 001
-*/
-
 /* NAME: main
 PARAMETERS: void, none
 PURPOSE: The main function will dynamically allocate random number arrays and sort them and search through them using different sorting algorithms

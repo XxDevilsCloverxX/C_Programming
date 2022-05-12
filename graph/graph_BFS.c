@@ -28,13 +28,6 @@ void enqueue(node* queue[], node* vertex, unsigned int size, int *rear);  //queu
 node* dequeue(node* queue[], int *front, int *rear);  //removes items from queues
 void breadth_first_search(node* adj_list[], node* start, unsigned int size);  //traverses all nodes using a queue
 
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using graphs
-FOR: CS 2413 Data Structures Section 001
-*/
-
 /* NAME: main
 PARAMETERS: void, none
 PURPOSE: The main function will call file specified in constant, and operate on graphs

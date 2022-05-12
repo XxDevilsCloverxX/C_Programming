@@ -1,7 +1,7 @@
 #include <stdio.h> //input and output
 #include <stdlib.h> // malloc and calloc
 
-//Let's write a linked list to spell out my name from a file using char nodes
+//Write a linked list to spell out my name from a file using char nodes
 
 typedef struct node{
   char letter;

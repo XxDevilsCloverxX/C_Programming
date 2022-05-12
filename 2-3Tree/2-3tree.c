@@ -3,13 +3,6 @@
 #include <string.h> //For strncmp and strncpy
 #include <ctype.h>  //For is upper and tolower
 
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using 2-3 Trees
-FOR: CS 2413 Data Structures Section 001
-*/
-
 #define KEYS 2  //max number of keys in a 2-3 tree node
 #define SIZE 50 //max characters in an string
 

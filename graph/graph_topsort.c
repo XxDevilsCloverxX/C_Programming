@@ -38,13 +38,6 @@ node* dequeue(node* queue[], int *front, int *rear);  //removes items from queue
 void topo_search(node* adj_list[], node* start, unsigned int size);  //topological sort of a graph
 void print_table(data_t table[][4], int size);  //designed for pretty prints of the table
 
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using graphs
-FOR: CS 2413 Data Structures Section 001
-*/
-
 /* NAME: main
 PARAMETERS: void, none
 PURPOSE: The main function will call file specified in constant, and operate on graphs

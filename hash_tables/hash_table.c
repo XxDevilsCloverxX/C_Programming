@@ -8,13 +8,6 @@
 #define FILE_COUNT 12 //n files to check
 #define SEARCH_QUERY "query.txt"
 
-/*
-AUTHOR: Silas Rodriguez
-FILENAME: problem1.c
-SPECIFICATION: Practice using hash tables
-FOR: CS 2413 Data Structures Section 001
-*/
-
 //document id linked list
 typedef struct docs{
   unsigned long int id; //id contained in node
@@ -59,7 +52,7 @@ int main(void){
   data *table[TABLE_SIZE] = {0};  //initialize an array of null pointers
   unsigned long int collides = 0;
   infile = fopen("document1.txt", "r");
-  //working on 1 file
+
   int i=0;
 
   //Build the hash table:
@@ -84,6 +77,7 @@ int main(void){
     fclose(infile);
   }
   printf("There were %ld collisions.\n", collides);
+
   //uncomment to print the hash table
   //print_table(table);
 
@@ -146,23 +140,22 @@ void clean_word(char string[]){
       src++;
     }
     //capital ascii
-    else if(isupper((unsigned char)*src))
-       {
-          /* Make it lowercase */
-          *dest++ = tolower((unsigned char)*src);
-          src++;
-       }
-       else if (src == dest){
-          /* Increment both pointers without copying */
-          src++;
-          dest++;
-       }
-       else{
-          /* Copy character */
-          *dest++ = *src++;
-       }
+    else if(isupper((unsigned char)*src)){
+      /* Make it lowercase */
+      *dest++ = tolower((unsigned char)*src);
+      src++;
     }
-    *dest = 0;
+    else if (src == dest){
+      /* Increment both pointers without copying */
+      src++;
+      dest++;
+    }
+    else{
+      /* Copy character */
+      *dest++ = *src++;
+    }
+  }
+  *dest = 0;
 }
 /*
 NAME: create_node
@@ -295,7 +288,7 @@ void input_query(char *query, data *hash_table[]){
   //multi-word strings are passed into query and need to be broken to tokens:
   char delim[2] = {" "};  //how to seperate tokens
   char *token = strtok(query, delim); //get first token
-  unsigned long int key=0, begin = 0, search_index =0;  //key for hash, begin to prevent inf loop(if somethign doesnt exist), search index for linear file search
+  unsigned long int key=0, begin = 0, search_index =0;  //key for hash, begin to prevent inf loop(if something doesnt exist), search index for linear file search
   int j = 1;
   unsigned long int finds=0; //finds is size of the list array
   search_data list[FILE_COUNT]; //an array for all the files a search query pulls up
@@ -307,14 +300,14 @@ void input_query(char *query, data *hash_table[]){
     list[i].terms = 0;
   }
 
-  //prepped at points for edits >>>>>>>>START HERE<<<<<<<<<<<<
+  //loop until the search query is no longer full
   while(token != NULL){
     //clean the token
     clean_word(token);
     //generate a hash key for the token:
     key = hash(token);
     begin = key;  //to handle non-existent values in table
-    //check if hash index in table is empty:
+    //check if hash index in table is not empty to perform comparisons:
     if(hash_table[key]!= NULL){
       //check if intial value is a matching value -> done
       if(strncmp(token, hash_table[key]->str, STR_SIZE) == 0){
@@ -447,7 +440,7 @@ void print_search(search_data *doc_list, unsigned long int size){
               4. I went with the one from the assignment so that the collisions and keys
               would be relatively close / exact with what would be checked. But if I wrote my
               own hash function, I would have chosen to add all the ascii values in the string,
-              divide by my favorite number (8), then mod TABLE_SIZE. No particular reason, just like that.
+              divide by my favorite number (8), then mod TABLE_SIZE. No particular reason, I just like that.
 
               5. The largest primary cluster I had from this hash table was 26.
 
@@ -466,7 +459,7 @@ void print_search(search_data *doc_list, unsigned long int size){
               7. Big O_storage is:
                   hash_table construction: O(mxn), m files of n words. mxn = total spaces needed.
 
-                  hash_table searching: O(q+m) - One array is used equivalent in size to the numeber of file
+                  hash_table searching: O(q+m) - One array is used equivalent in size to the number of files
                   constructing the hash table. And a query string, q is used to perform this search
 
 */
